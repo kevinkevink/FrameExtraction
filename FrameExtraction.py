@@ -42,6 +42,6 @@ if __name__ == '__main__':
         #read in from directory
         for filename in os.listdir(argument.directory):
             print("processing ",filename, "...")
-            file = os.path.abspath(argument.directory + "/" + filename)
+            file = os.path.abspath(os.path.join(argument.directory,filename))
             video_to_frames(file, argument.output, argument.frames)
         print("Done!\n")
