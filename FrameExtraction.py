@@ -3,6 +3,7 @@ import os
 import argparse
 
 def video_to_frames(file, output, num):
+    file_name = os.path.basename(file)
     fps = int(num)
     vidcap = cv2.VideoCapture(file)
     count = 0
@@ -10,7 +11,8 @@ def video_to_frames(file, output, num):
         success, image = vidcap.read()
         if success:
             if(count % fps == 0):
-                cv2.imwrite(os.path.join(output, '%d.png') % count,image)
+                path = os.path.join(output, '%s%d.png') % (file_name, count)
+                cv2.imwrite(path,image)
             count += 1
         else:
             break
