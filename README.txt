@@ -1,3 +1,7 @@
+#Frame Extraction (Created in 2020 for Wisconsin Autonomous)
+
+This was a simple frame extraction program that was designed to save a select number of frames from a series of videos, in order to create training data for the autonomous AI.
+
 Command: python FrameExtraction.py 
 Looks for folder named input that contains ONLY videos to be parsed
 Places images in an already-created directory named output
